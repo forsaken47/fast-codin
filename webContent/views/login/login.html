@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+</head>
+<body>
+	<div id="lg_cont">
+		<div id="lgct_title">
+			<div id="tl_word" class="">欢迎进入产能评估系统<br />请登录</div>
+		</div>
+		<div class="h20"></div>
+		<div id="lg_window">
+			<form id="lg_form" action="" class="form-horizontal">
+				<div class="row">
+					<div class="control-group span13 offset4">
+						<label class="control-label">用户名：</label>
+						<div class="controls">
+							<input name="userName" type="text" class="input-large"
+								data-rules="{required : true}" data-messages="{required:'请输入用户名'}" 
+								data-tip="{text:'-eg:张三-->zs'}">
+						</div>
+					</div>
+				</div>	
+				
+				<div class="row">
+					<div class="control-group span13 offset4">
+						<label class="control-label">密码：</label>
+						<div class="controls">
+							<input name="pwd" type="password" class="input-large"
+								data-rules="{required : true}" data-messages="{required:'请输入密码'}" 
+								data-tip="{text:'-初始密码:张三-->zs'}">
+						</div>
+					</div>
+				</div>
+				<div class="row actions-bar">
+					<div class="form-actions span13 offset8">
+						<button id="validateUsers" type="button" class="button button-primary">登录</button>
+						<button type="reset" class="button">重置</button>
+					</div>
+				</div>
+
+			</form>
+		</div>
+	
+	</div>
+</body>
+</html>
