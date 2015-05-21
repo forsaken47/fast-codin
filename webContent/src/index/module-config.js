@@ -37,6 +37,15 @@ KISSY.config({
             base : './src',
             combine:false,
             ignorePackageNameInUri: false
+        },
+        {
+            name :'mockServer',
+            //开启后调用的是未压缩的文件
+            debug:true,
+            tag: '20150311',
+            base : './src',
+            combine:false,
+            ignorePackageNameInUri: false
         }
     ]
 });

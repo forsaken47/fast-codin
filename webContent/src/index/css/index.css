@@ -47,7 +47,7 @@ nav {
 }
 .main {
     width: 70%;
-    float: left;
+    float: right;
     min-width: 840px;
     min-height: 1000px;
 }
@@ -89,10 +89,7 @@ nav ul li a {
     padding-bottom: 15px;
     margin-bottom: 15px;
 }
-.sticky {
-    position: fixed;
-    top: 0;
-}
+
 .gallery li{
     padding-left:10px;
 }
@@ -136,7 +133,7 @@ nav ul li a {
 }
 
 .footer {
-    border-top : 2px solid #ebebeb;
+    border-top : 2px solid #fff;
     padding: 5px 0 10px 0;
     margin-bottom: 0px !important;
     font-size: 0.9em;
@@ -182,7 +179,7 @@ nav ul li a {
     width: 500px !important;
 }
 .article {
-    margin: 40px;
+    margin: 20px 40px 60px 40px;
 }
 body .bui-message{
     left:520px !important;
@@ -212,4 +209,68 @@ body .bui-message{
     display: inline-block;
     line-height: 14px;
     float:left;
+}
+.component{
+    width: 100%;
+    min-height:50px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.component .nav-header {
+    height:36px;
+}
+
+.htmlplayground{
+    min-height: 50px;
+    max-height: 600px;
+    border-top:1px #000 solid;
+    /*border-bottom:1px #000 solid;*/
+    /*background-color: rgb(215, 214, 216);*/
+    overflow: scroll;
+}
+
+#J_htmlHeaderProp input,#J_htmlbodyFunc input,#J_htmlbodyFunc select{
+    color:#000;
+}
+
+#J_htmlbodyFunc .control-label-small{
+    width:80px !important;
+
+}
+.ipt-height{
+    height:16px !important;
+    line-height: 16px !important;
+}
+#J_htmlHeaderProp textarea{
+    max-width: 150px;
+    max-height: 200px;
+    color: #000;
+}
+.well{
+    background:none !important;
+    border:1px rgb(215,202,153) solid !important;
+}
+.icon-lock{
+    width:15px !important;
+    height:15px !important;
+    line-height: 15px !important;
+    border-radius: 3px !important;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: inherit;
+}
+.stick_leftlock{
+    text-align: right;
+    padding-right:24px;
+}
+.stick_rightlock{
+    text-align: right;
+}
+.leftmargin{
+    left:30%;
+    width:70%;
 }

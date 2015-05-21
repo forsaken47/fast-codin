@@ -19,7 +19,9 @@ KISSY.add('htmlEditor/htmlEditor', function (S,require,exports,module) {
         };
         self.bindEvent = function(tar,evt,func){
             $(tar).on(evt,func);
-
+        };
+        self.delegateEvent = function(tar,evt,func){
+            Node.all('#J_htmlGallery').delegate(evt,tar,func);
         };
     }
     module.exports = HtmlEditor;

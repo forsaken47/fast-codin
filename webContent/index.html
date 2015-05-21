@@ -37,16 +37,18 @@
                 <img src="src/index/img/fc-logo3.png" alt="">
             </a>
         </header>
+        <div class="stick_leftlock"><i id="J_leftLock" class="icon-lock icon-white"></i></div>
         <div id="stickme">
-            <div class="gallery">
+            <div class="gallery" id="J_htmlGallery">
                 <div class="nav-header">
                     <div class="info-header">--- HTML ---</div>
                     <span class="info hide">[收起]</span>
                 </div>
                 <div class="func">
-                    <form id="J_htmlForm" action="" class="form-vertical">
+                    <label class="control-label">基础功能：</label>
+                    <form id="J_htmlForm" action="" class="form-vertical well well-small" autocomplete="off">
                     <div class="control-group">
-                        <label class="control-label">基础功能：</label>
+
                         <div class="controls bui-form-group">
                             <label class="checkbox" for="c_frame"><input id="c_frame" name="c_frame" value="1" type="checkbox">生成骨架</label>
                             <label class="checkbox" for="c_css"><input id="c_css" name="c_css" value="2" type="checkbox">头引入KISSY框架CSS</label>
@@ -54,9 +56,119 @@
                         </div>
                     </div>
                     </form>
+                    <div class="control-label">头部属性：</div>
+                    <form id="J_htmlHeaderProp" action="" class="form-horizontal well well-small">
+                        <div class="control-group">
+                            <label class="control-label control-label-small">网页title：</label>
+                            <div class="controls">
+                                <input id="t_title" name="t_title" type="text" class="input-small ipt-small">
+                                <button type="button" id="btn_title" class="button button-success  button-small">载入</button>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label control-label-small">作者：</label>
+                            <div class="controls">
+                                <input id="t_author" name="t_author" type="text" class="input-small ipt-height">
+                                <button type="button" id="btn_author" class="button button-success  button-small">载入</button>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label control-label-small">描述：</label>
+                            <div class="controls control-row-auto">
+                                <textarea id="t_description" name="t_description" class="input-small"></textarea>
+                                <button type="button" id="btn_description" class="button button-success  button-small">载入</button>
+                            </div>
+                        </div>
+                        <div>&nbsp;&nbsp;插入/删除引用CSS文件：</div>
+                        <div class="control-group">
+                            <label class="control-label control-label-small">link href=</label>
+                            <div class="controls">
+                                <input type="text" id="t_css" name="t_css" class="input-normal ipt-height">
+                                <button type="button" id="btn_incss" class="button button-success  button-small">载入</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-
+                <div class="control-label">主体功能：</div>
+                <form id="J_htmlbodyFunc" action="" class="form-horizontal well well-small">
+                    <div class="control-group">
+                        <label class="control-label">新建页面元素</label>
+                        <div class="controls">
+                            <input class="input-normal ipt-height invisible"><button type="button" id="btn_divin" class="button button-success  button-small">插入</button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label control-label-small">种类：</label>
+                        <div class="controls">
+                            <select id="b_type" name="b_type"  class="input-small">
+                                <option value="div">div</option>
+                                <option value="a">a</option>
+                                <option value="button">button</option>
+                                <option value="form">form</option>
+                                <option value="ul">ul</option>
+                                <option value="ol">ol</option>
+                                <option value="alter">自定义</option>
+                            </select>
+                            <input id="b_altype" name="b_altype" type="text" class="input-small invisible">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label control-label-small">目标元素：</label>
+                        <div class="controls">
+                            <input data-rules="{required:true}" id="b_father" name="b_father" type="text" class="input-small ipt-height" value="body">
+                            <p class="auxiliary-text">目标的.class / #id</p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label control-label-small">插入位置：</label>
+                        <div class="controls control-row-auto">
+                            <label class="radio">
+                                <input type="radio" id="b_rst" name="b_raway" value="st" checked="checked">起始
+                            </label>
+                            <label class="radio">
+                                <input type="radio" id="b_red" name="b_raway" value="ed" >结尾
+                            </label>
+                            <label class="radio">
+                                <input type="radio" id="b_rbef" name="b_raway" value="bt" >目标前
+                            </label>
+                            <label class="radio">
+                                <input type="radio" id="b_raft" name="b_raway" value="at" >目标后
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label control-label-small">.class =</label>
+                        <div class="controls">
+                            <input id="b_class" name="b_class" type="text" class="input-small ipt-height">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label control-label-small">#id =</label>
+                        <div class="controls">
+                            <input id="b_id" name="b_id" type="text" class="input-small ipt-height">
+                        </div>
+                    </div>
+                    <div id="J_htmlbodyFuncAlt"></div>
+                    <div>&nbsp;&nbsp;自定义属性：</div>
+                    <div id="J_htmlbodyFuncCust">
+                        <div class="control-group">
+                            <label class="control-label control-label-small">名：</label>
+                            <div class="controls">
+                                <input  name="b_pname" type="text" class="input-small ipt-height">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label control-label-small">值：</label>
+                            <div class="controls">
+                                <input  name="b_pvalue" type="text" class="input-small ipt-height">
+                                <button type="button" id="btn_badd" class="button button-success  button-small">＋</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
+
+
             <!--类型切换-->
             <div class="gallery">
                 <div class="nav-header">
@@ -84,11 +196,12 @@
                 </div>
             </div>
         </div>
-
     </nav>
 
     <div class="main" id="content">
         <div class="fcloader article">
+            <div class="stick_rightlock"><i id="J_rightLock" class="icon-lock"></i></div>
+
             <div class="component">
                 <div class="nav-header">
                     <div class="info-header h1">HTML</div>
@@ -99,11 +212,22 @@
                     <div class="xmlcode hide"></div>
                     <div class="hide" id="J_htmlXTP"></div>
 
-                    <div class="htmlplayground">
 
-                    </div>
                 </div>
             </div>
+            <div class="component">
+                <div class="nav-header">
+                    <div class="info-header h1">Playground</div>
+                    <span class="info">[收起]</span>
+                    <div class="copy right"><span class="x-icon x-icon-mini x-icon-warning fc_icon">i</span><span class="fc_copy">&nbsp;Page Output</span></div>
+                </div>
+                <div class="htmlplayground">
+                    <div class="h2" style="">实时网页效果展示</div>
+                </div>
+            </div>
+
+
+
         </div>
 
         <div class="footer">
@@ -118,6 +242,8 @@
 	
 		
 		<script src="http://localhost/kissy/jquery/jquery-1.8.1.min.js"></script>
+        <script src="http://localhost/kissy/jquery-mock/jquery-mockjax.js"></script>
+        <script src="http://localhost/kissy/jquery-mock/jquery-mockjson.js"></script>
 		<!-- <script src="http://localhost/kissy/??seed-min.js,import-style-min.js,/bui/adapter-min.js" data-config="{combine:true}"></script> -->
 		<!-- 在项目发布时，请以上面的一行代码替换下面三行 -->
 		<script src="http://localhost/kissy/1.4.9-Co/seed-min.js"></script>

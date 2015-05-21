@@ -8,13 +8,12 @@ KISSY.add('htmlEditor/src/jsondb', function (S,require,exports,module) {
             title: "",
             author: "",
             description: "",
-            css_href: null,
-            js_src:null,
+            css_href: [],
+            js_src:[],
             ink_style: false,
             ink_js:false,
             body_cont: null,
-            script_st: "script",
-            script_ed: "/script"
+            script_st: "script"
         };
     }
     module.exports = Jsondb;

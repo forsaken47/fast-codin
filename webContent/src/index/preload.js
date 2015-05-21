@@ -7,27 +7,37 @@ KISSY.add('index/preload', function (S,require,exports,module) {
         win = $(window);
 
     function fixSidebarHeight(){
+        var leftbar = $('#sidebar').height();
         var d = $('#content').height();
 //        var ds = $('#sidebar').height();
         $('#sidebar').css({ "min-height": d });
-        /*if(ds>d){
-            $('#content').css({ "min-height": ds });
-        }*/
+        if(leftbar>d){
+            $('.article').css({ "min-height": leftbar-118 });
+        }
     }
 
-    function sticky($target){
+    function sticky($target,flag){
         var top = $($target).offset().top,
             scrollTop = 0,
             stickyCls = 'sticky';
-        win.on('scroll', S.buffer(function(){
+        function bufferScroll(){
+            S.buffer(function(){
                 scrollTop = win.scrollTop();
                 if (top < scrollTop) {
                     $($target).addClass(stickyCls);
                 } else {
                     $($target).removeClass(stickyCls);
                 }
-            },1000/60)
-        );
+            },1000/60)();
+        }
+
+        if(flag === "detach"){
+            $($target).removeClass(stickyCls);
+            win.detach('scroll');
+        }else{
+
+            win.on('scroll', bufferScroll);
+        }
     }
 
 
@@ -70,9 +80,18 @@ KISSY.add('index/preload', function (S,require,exports,module) {
             }else{
                 infoText.text('[收起]');
             }
+
+            /*修正高度*/
+            fixSidebarHeight();
         });
     }
+    function disableFunctions(){
+        jQuery("#J_htmlGallery :input:not(#c_frame)").attr("disabled","disabled");
+    }
 
+    function openFunctions() {
+        jQuery("#J_htmlGallery :input:not(#c_frame)").attr("disabled",false);
+    }
     function detectIE(){
         var isIE = S.UA.ie;
         if(isIE){
@@ -81,15 +100,37 @@ KISSY.add('index/preload', function (S,require,exports,module) {
         }
     }
     function preload(){
+        var self = this;
+
         this.init = function () {
             detectIE();
             fixSidebarHeight();
             infoPlay();
             doHideShow();
+            disableFunctions();
         };
         this.fix = function () {
           fixSidebarHeight();
         };
+        this.disableFunc = function(){
+            disableFunctions();
+        };
+        this.openFunc = function () {
+            openFunctions();
+        };
+
+        self.stickStat = {};
+        this.stick = function (target,flag) {
+            var $target = $('#' + target);
+
+            if(self.stickStat[target] || flag === "detach" ){
+                sticky($target,"detach");
+                self.stickStat[target] = false;
+            }else{
+                sticky($target,flag);
+                self.stickStat[target] = true;
+            }
+        }
     }
 
     module.exports = preload;

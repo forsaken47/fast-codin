@@ -17,15 +17,14 @@
         <link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
         <!-- start of KISSY+BUI script -->
         {{#if ink_style}}
-        <link href="http://22.11.143.109/kissy/1.4.9-Co/css/dpl/base-min.css" rel="stylesheet">
-        <link href="http://22.11.143.109/kissy/20141114/bui/css/bs3/dpl-min.css" rel="stylesheet">
-        <link href="http://22.11.143.109/kissy/20141114/bui/css/bs3/bui-min.css" rel="stylesheet">
+        <link href="http://kissycdn/kissy/1.4.9-Co/css/dpl/base-min.css" rel="stylesheet">
+        <link href="http://kissycdn/kissy/20141114/bui/css/bs3/dpl-min.css" rel="stylesheet">
+        <link href="http://kissycdn/kissy/20141114/bui/css/bs3/bui-min.css" rel="stylesheet">
         {{/if}}
         <!-- end of KISSY+BUI script -->
         <!-- start of personalized style -->
-        {{#if css_href}}
-        {{#each css_href}}
-        <link href="{{this}}" rel="stylesheet">
+        {{#if css_href.length}}
+        {{#each css_href}}<link href="{{this}}" rel="stylesheet">
         {{/each}}
         {{/if}}
         <!-- end of personalized style -->
@@ -35,17 +34,16 @@
     {{body}}
     <!-- start of KISSY script -->
     {{#if ink_js}}
-    <{{script_st}} src="http://22.11.143.109/kissy/jquery/jquery-1.8.1.min.js"><{{script_ed}}>
-    <!-- <script src="http://22.11.143.109/kissy/??seed-min.js,import-style-min.js,/bui/adapter-min.js" data-config="{combine:true}"></script> -->
-    <{{script_st}} src="http://22.11.143.109/kissy/1.4.9-Co/seed-min.js"><{{script_ed}}>
-    <{{script_st}} src="http://22.11.143.109/kissy/1.4.9-Co/import-style-min.js"><{{script_ed}}>
-    <{{script_st}} src="http://22.11.143.109/kissy/20141114/bui/adapterCo-min.js"><{{script_ed}}>
+    <{{script_st}} src="http://kissycdn/kissy/jquery/jquery-1.8.1.min.js"></{{script_st}}>
+    <!-- <script src="http://kissycdn/kissy/??seed-min.js,import-style-min.js,/bui/adapter-min.js" data-config="{combine:true}"></script> -->
+    <{{script_st}} src="http://kissycdn/kissy/1.4.9-Co/seed-min.js"></{{script_st}}>
+    <{{script_st}} src="http://kissycdn/kissy/1.4.9-Co/import-style-min.js"></{{script_st}}>
+    <{{script_st}} src="http://kissycdn/kissy/20141114/bui/adapterCo-min.js"></{{script_st}}>
     {{/if}}
     <!-- end of KISSY script -->
     <!-- start of personalized script -->
-    {{#if js_src}}
-    {{#each js_src}}
-    <{{script_st}} src="{{this}}"><{{script_ed}}>
+    {{#if js_src.length}}
+    {{#each js_src}}<{{script_st}} src="{{this}}"></{{script_st}}>
     {{/each}}
     {{/if}}
     <!-- end of personalized script -->
